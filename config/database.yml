@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: card_game_development
+
+test:
+  adapter: postgresql
+  database: card_game_test
+
+production:
+  adapter: postgresql
+  database: card_game_production
