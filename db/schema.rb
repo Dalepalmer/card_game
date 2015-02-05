@@ -37,13 +37,21 @@ ActiveRecord::Schema.define(version: 20150204181924) do
   create_table "hands", force: :cascade do |t|
     t.boolean  "winner"
     t.integer  "final_score"
+    t.integer  "zero_zero_card"
+    t.integer  "zero_one_card"
+    t.integer  "one_zero_card"
+    t.integer  "one_one_card"
+    t.integer  "two_zero_card"
+    t.integer  "two_one_card"
+    t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "name"
-    t.string "current_score"
+    t.string  "name"
+    t.string  "current_score"
+    t.integer "player_number"
   end
 
 end

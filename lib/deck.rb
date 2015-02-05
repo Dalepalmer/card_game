@@ -44,6 +44,8 @@ class Deck < ActiveRecord::Base
     end
   end
 
-  def find_card_by_deck_order
-end
+    def draw_latest_discard
+      result = self.cards.where("hand_id = 10")
+      result = result[result.length-1]
+    end
 end
