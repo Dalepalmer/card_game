@@ -15,7 +15,6 @@ class Deck < ActiveRecord::Base
       deck.cards.each do |card|
         card.update({:deck_card_order => counter})
         counter += 1
-
       end
     else
       deck.shuffle
@@ -36,12 +35,12 @@ class Deck < ActiveRecord::Base
   output
   end
 
-  def shuffle()
-    new_array = [0..51]
-    self.cards.each do |cards|
+  def shuffle
+    new_array = (0..51).to_a
+    self.cards.each do |card|
       sample_card = new_array.sample()
       new_array.delete(sample_card)
-      cards.deck_card_order = sample_card
+      card.update({:deck_card_order => sample_card})
     end
   end
 
