@@ -5,6 +5,7 @@ class CreateCardsTable < ActiveRecord::Migration
       t.integer :suit
       t.integer :deck_id
       t.integer :hand_id
+      t.integer :deck_card_order
     end
 
     create_table(:decks) do |t|

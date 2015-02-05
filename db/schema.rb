@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150204181924) do
     t.integer "suit"
     t.integer "deck_id"
     t.integer "hand_id"
+    t.integer "deck_card_order"
   end
 
   create_table "decks", force: :cascade do |t|
