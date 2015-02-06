@@ -17,10 +17,7 @@ ActiveRecord::Schema.define(version: 20150204181924) do
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.integer "value"
-    t.integer "suit"
-    t.integer "deck_id"
-    t.integer "hand_id"
+    t.belongs_to "card_holder"
     t.integer "deck_card_order"
     t.boolean "flipped"
   end

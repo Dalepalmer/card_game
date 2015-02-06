@@ -41,4 +41,13 @@ class Hand < ActiveRecord::Base
       self.update_hand_id_of_card(Card.find(self.two_one_card))
     end
 end
+
+  def all_card_flipped?
+    self.cards.each() do |card|
+      if card.flipped == false
+        return false
+      end
+    end
+    return true
+  end
 end

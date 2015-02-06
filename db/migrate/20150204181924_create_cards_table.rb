@@ -11,6 +11,7 @@ class CreateCardsTable < ActiveRecord::Migration
 
     create_table(:decks) do |t|
       t.integer :game_id
+      t.belongs_to :game
     end
 
     create_table(:games) do |t|
