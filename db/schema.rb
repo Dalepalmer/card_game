@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20150204181924) do
     t.boolean "ended"
     t.string  "winner"
     t.integer "rounds_played"
+    t.integer "current_player_id"
+    t.boolean "last_turn"
   end
 
   create_table "hands", force: :cascade do |t|
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150204181924) do
     t.string  "name"
     t.string  "current_score"
     t.integer "player_number"
+    t.integer "game_id"
   end
 
 end

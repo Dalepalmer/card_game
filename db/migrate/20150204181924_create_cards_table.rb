@@ -18,6 +18,7 @@ class CreateCardsTable < ActiveRecord::Migration
       t.string :winner
       t.integer :rounds_played
       t.integer :current_player_id
+      t.boolean :last_turn
     end
 
     create_table(:players) do |t|
