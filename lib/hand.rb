@@ -14,29 +14,30 @@ class Hand < ActiveRecord::Base
   end
 
   def switch(coord, card)
+    card.update({:flipped => true})
     if coord == 0
       Card.find(self.zero_zero_card).discard
-      self.update(:zero_zero_card => card.id)
+      self.update({:zero_zero_card => card.id})
       self.update_hand_id_of_card(Card.find(self.zero_zero_card))
     elsif coord == 1
       Card.find(self.zero_one_card).discard
-      self.update(:zero_one_card => card.id)
+      self.update({:zero_one_card => card.id})
       self.update_hand_id_of_card(Card.find(self.zero_one_card))
     elsif coord == 2
       Card.find(self.one_zero_card).discard
-      self.update(:one_zero_card => card.id)
+      self.update({:one_zero_card => card.id})
       self.update_hand_id_of_card(Card.find(self.one_zero_card))
     elsif coord == 3
       Card.find(self.one_one_card).discard
-      self.update(:one_one_card => card.id)
+      self.update({:one_one_card => card.id})
       self.update_hand_id_of_card(Card.find(self.one_one_card))
     elsif coord == 4
       Card.find(self.two_zero_card).discard
-      self.update(:two_zero_card => card.id)
+      self.update({:two_zero_card => card.id})
       self.update_hand_id_of_card(Card.find(self.two_zero_card))
     else
       Card.find(self.two_one_card).discard
-      self.update(:two_one_card => card.id)
+      self.update({:two_one_card => card.id})
       self.update_hand_id_of_card(Card.find(self.two_one_card))
     end
 end

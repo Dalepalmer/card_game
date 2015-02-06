@@ -6,6 +6,7 @@ class CreateCardsTable < ActiveRecord::Migration
       t.integer :deck_id
       t.integer :hand_id
       t.integer :deck_card_order
+      t.boolean :flipped
     end
 
     create_table(:decks) do |t|
@@ -16,12 +17,14 @@ class CreateCardsTable < ActiveRecord::Migration
       t.boolean :ended
       t.string :winner
       t.integer :rounds_played
+      t.integer :current_player_id
     end
 
     create_table(:players) do |t|
       t.string :name
       t.string :current_score
       t.integer :player_number
+      t.belongs_to :game
     end
 
     create_table(:hands) do |t|

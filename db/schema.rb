@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150204181924) do
     t.integer "deck_id"
     t.integer "hand_id"
     t.integer "deck_card_order"
+    t.boolean "flipped"
   end
 
   create_table "decks", force: :cascade do |t|

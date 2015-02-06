@@ -25,14 +25,20 @@ class Deck < ActiveRecord::Base
   def draw(draw_times)
     output = []
     counter = 0
-    draw_times.times do
+    number_of_drawn_cards = 0
+    until number_of_drawn_cards == draw_times do
     @card = self.cards.find_by deck_card_order: counter
         if @card.hand_id == 0
           output.push(@card)
+          number_of_drawn_cards += 1
         end
    counter += 1
   end
-  output
+    if output.length > 1
+      output
+    else
+      output[0]
+    end
   end
 
   def shuffle
